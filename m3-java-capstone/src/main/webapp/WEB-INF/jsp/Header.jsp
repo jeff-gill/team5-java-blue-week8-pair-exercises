@@ -12,7 +12,7 @@
 		</div>
 		<div class="navBar">
 			<nav>
-				<ul>
+				<ul class="navBarItems">
 					<li><a href=#>Home</a></li>
 					<li><a href=#>Survey</a></li>
 				</ul>

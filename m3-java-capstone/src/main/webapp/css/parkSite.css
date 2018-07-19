@@ -1,27 +1,40 @@
+a:link {
+	text-decoration: none;
+	color: white;
+	
+}
+a:visited {
+	text-decoration: none;
+}
+
 /* header */
-nav {
+.nav {
 	margin-bottom: 20px;
 	padding: 5px;
 	height: 50px;
+	width: 80em;
+	font-weight: bold;
+		align-items: center;
+}
+.navBarItems {
+	background-color: black;
+	height: 2em;
+	font-size: 2em;
+	
+	
+}
+li {
+	display: inline-block;
+	color: white;
+	padding-left: 20px;
+
 }
 
 .logoPic {
-	width: 30%;
+	width: 40%;
 }
 
-.nav ul {
-	float: left;
-}
 
-ul {
-	display: block;
-	list-style-type: disc;
-	-webkit-margin-before: 1em;
-	-webkit-margin-after: 1em;
-	-webkit-margin-start: 0px;
-	-webkit-margin-end: 0px;
-	-webkit-padding-start: 40px;
-}
 
 /* homepage */
 .parkList {
@@ -45,8 +58,10 @@ ul {
 	flex-basis: 50%;
 }
 
-.homePageParkName {
+#homePageParkName {
 align-items: center;
+color: #000;
+font-weight: bold;font-size: 20px;
 	
 }
 

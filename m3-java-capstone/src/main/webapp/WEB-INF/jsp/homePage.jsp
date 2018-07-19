@@ -12,8 +12,8 @@
 				</a>
 			</div>
 			<div class="homePageNameAndDetails">
-				<div class="homePageParkName">
-					<a href = "<c:url value="parkDetail?parkCode=${park.parkCode}" />">
+				<div class="divHomePageParkName">
+					<a id="homePageParkName" href = "<c:url value="parkDetail?parkCode=${park.parkCode}" />">
 						${park.parkName} 
 					</a>	
 				</div>
