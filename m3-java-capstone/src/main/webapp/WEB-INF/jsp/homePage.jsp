@@ -3,9 +3,9 @@
 <c:import url ="/WEB-INF/jsp/Header.jsp" />
 
 <section class="parkList">
-	<div class="parkContainer">
+	
 		<c:forEach items="${parks}" var = "park">
-			
+			<div class="parkContainer">
 			<div class="homePageImage">
 				<a href = "<c:url value="parkDetail?parkCode=${park.parkCode}" />">
 					<img src="img/parks/${park.parkCode}.jpg" />
@@ -18,8 +18,9 @@
 					</a>	
 				</div>
 				<div class="homePageParkDescription">
-					${park.parkDescription}
+					${park.parkDescription}<br>
 				</div>
+			</div>
 			</div>
 		</c:forEach>
 	

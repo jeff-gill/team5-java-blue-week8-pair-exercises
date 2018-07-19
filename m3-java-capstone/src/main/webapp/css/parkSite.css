@@ -1,0 +1,80 @@
+/* header */
+nav {
+	margin-bottom: 20px;
+	padding: 5px;
+	height: 50px;
+}
+
+.logoPic {
+	width: 30%;
+}
+
+.nav ul {
+	float: left;
+}
+
+ul {
+	display: block;
+	list-style-type: disc;
+	-webkit-margin-before: 1em;
+	-webkit-margin-after: 1em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+	-webkit-padding-start: 40px;
+}
+
+/* homepage */
+.parkList {
+	background-color: green:
+	radius: 20;
+}
+
+.parkContainer {
+	display: flex;
+	position: relative;
+	align-items: center;
+	text-align: left;
+}
+
+.homePageImage {
+	flex-basis:38%;
+	padding: 20px;
+}
+
+.homePageNameAndDetails {
+	flex-basis: 50%;
+}
+
+.homePageParkName {
+align-items: center;
+	
+}
+
+.homePageParkDescription {
+	
+}
+
+/* parkDetail */
+.detailContent {
+	
+}
+
+.parkDetailsContainer {
+	
+}
+
+.detailImage {
+	
+}
+
+.detailParkTitleBar {
+	
+}
+
+.detailParkName {
+	
+}
+
+.detailParkState {
+	
+}

@@ -2,17 +2,17 @@
 
 <c:import url ="/WEB-INF/jsp/Header.jsp" />
 
-<section class=mainContent>
-	<div>
-		<div class=detailImage>
+<section class="detailContent">
+	<div class="parkDetailsContainer">
+		<div class="detailImage">
 			<img src="img/parks/${park.parkCode}.jpg" />
 		</div>
 		
-		<div class=detailParkTitleBar>
-			<div class=detailParkName>
+		<div class="detailParkTitleBar">
+			<div class="detailParkName">
 				${park.parkName}
 			</div>
-			<div class=detailParkState>
+			<div class="detailParkState">
 				${park.state}
 			</div>
 		</div>
