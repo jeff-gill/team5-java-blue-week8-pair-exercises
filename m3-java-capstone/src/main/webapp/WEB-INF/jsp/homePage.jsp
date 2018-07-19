@@ -1,32 +1,32 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<c:import url ="/WEB-INF/jsp/Header.jsp" />
+<c:import url="/WEB-INF/jsp/Header.jsp" />
 
 <section class="parkList">
-	
-		<c:forEach items="${parks}" var = "park">
-			<div class="parkContainer">
+<div>
+	<c:forEach items="${parks}" var="park">
+		<div class="parkContainer">
 			<div class="homePageImage">
-				<a href = "<c:url value="parkDetail?parkCode=${park.parkCode}" />">
+				<a href="<c:url value="parkDetail?parkCode=${park.parkCode}" />">
 					<img src="img/parks/${park.parkCode}.jpg" />
 				</a>
 			</div>
 			<div class="homePageNameAndDetails">
 				<div class="divHomePageParkName">
-					<a id="homePageParkName" href = "<c:url value="parkDetail?parkCode=${park.parkCode}" />">
-						${park.parkName} 
-					</a>	
+					<a id="homePageParkName"
+						href="<c:url value="parkDetail?parkCode=${park.parkCode}" />">
+						${park.parkName} </a>
 				</div>
 				<div class="homePageParkDescription">
 					${park.parkDescription}<br>
 				</div>
 			</div>
-			</div>
-		</c:forEach>
-	
+		</div>
+	</c:forEach>
+
 	</div>
 </section>
-	
+
 
 </body>
 </html>

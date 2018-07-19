@@ -1,44 +1,46 @@
 a:link {
+	color: inherit;
 	text-decoration: none;
 	color: white;
-	
 }
+
 a:visited {
+	color: inherit;
 	text-decoration: none;
 }
 
 /* header */
 .nav {
+	font-family: "Helvetica, sans-serif";
 	margin-bottom: 20px;
 	padding: 5px;
 	height: 50px;
 	width: 80em;
 	font-weight: bold;
-		align-items: center;
+	margin-bottom: 20px;
 }
+
 .navBarItems {
 	background-color: black;
 	height: 2em;
 	font-size: 2em;
-	
-	
+	font-family: Verdana;
 }
+
 li {
 	display: inline-block;
 	color: white;
 	padding-left: 20px;
-
+	padding-top: 10px;
 }
 
 .logoPic {
 	width: 40%;
 }
 
-
-
 /* homepage */
 .parkList {
-	background-color: green:
+	background-color: green:     
 	radius: 20;
 }
 
@@ -50,19 +52,26 @@ li {
 }
 
 .homePageImage {
-	flex-basis:38%;
+	flex-basis: 38%;
+	max-width: 100%;
+	height: auto;
 	padding: 20px;
+	height: auto;;
 }
 
 .homePageNameAndDetails {
 	flex-basis: 50%;
+	display: block;
 }
 
 #homePageParkName {
-align-items: center;
-color: #000;
-font-weight: bold;font-size: 20px;
-	
+	position: relative;
+	align-items: center;
+	color: #000;
+	font-weight: bold;
+	font-size: 30px;
+	margin-bottom: 20px;
+	align-items: center;
 }
 
 .homePageParkDescription {
@@ -74,22 +83,92 @@ font-weight: bold;font-size: 20px;
 	
 }
 
-.parkDetailsContainer {
+.detailsImageParkNameStateContainer {
 	
 }
 
-.detailImage {
-	
+.detailImage img {
+	width: 90%;
 }
 
-.detailParkTitleBar {
-	
+.detailParkNameStateSubContainer {
+	position: block;
+	padding-bottom: 20px;
 }
 
-.detailParkName {
-	
+#detailParkName {
+	font-family: Verdana;
+	font-size: 40px;
+	font-weight: bold;
+	text-align: left;
+	font-size: 4vw;
 }
 
-.detailParkState {
-	
+#detailState {
+	font-size: 2vw;
+	text-align: left;
+}
+
+.detailQuoteContainer {
+	position: block, inline;
+	background-color: #b3ff99;
+	width: 90%;
+	border-radius: 10px;
+	padding: 5px;
+	font-weight: 200;
+}
+
+#detailQuote {
+	font-size: 2vw;;
+}
+
+#detailQuoteSource {
+	font-size: 1vw;
+	text-align: left;
+	padding-left: 50px;
+}
+
+.parkAmmenitiesContainer {
+	font-family: Arial;
+	padding-top: 20px;
+	position: relative;
+}
+
+.parkAmmenitiesDescription {
+	position: relative;
+	border-width: 2px;
+	border-style: groove;
+	border-radius: 5px;
+	font-size: 1.5vw 1.5vh;
+	padding: 10px;
+}
+
+.parkAmmenitiesDetailsContainer {
+	display: flex;
+	border-style: groove;
+	border-radius: 5px;
+	border-width: 2px;
+	font-size: 1.5vw;
+}
+
+#leftParkAmmenities {
+	position: relative;
+	border-width: 1px;
+	border-right-style: dashed;
+	padding: 5px 10px 15px 20px;
+	flex-basis: 33%;
+}
+
+#middleParkAmmenities {
+	position: relative;
+	border-width: 1px;
+	border-right-style: dashed;
+	padding: 5px 10px 15px 20px;
+	flex-basis: 33%;
+}
+
+#rightParkAmmenities {
+	position: relative;
+	padding: 5px 10px 15px 20px;
+	flex-basis: 33%;
 }
