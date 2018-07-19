@@ -16,6 +16,7 @@ public class Park {
 	private String parkDescription;
 	private int entryFee;
 	private int numberOfAnimalSpecies;
+	private int voteCount;
 	
 	
 	public String getParkCode() {
@@ -107,6 +108,12 @@ public class Park {
 	}
 	public void setNumberOfAnimalSpecies(int numberOfAnimalSpecies) {
 		this.numberOfAnimalSpecies = numberOfAnimalSpecies;
+	}
+	public int getVoteCount() {
+		return voteCount;
+	}
+	public void setVoteCount(int voteCount) {
+		this.voteCount = voteCount;
 	}
 	
 	public String codeToLowerCase() {
