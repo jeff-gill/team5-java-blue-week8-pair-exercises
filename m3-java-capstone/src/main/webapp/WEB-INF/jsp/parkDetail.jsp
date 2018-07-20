@@ -61,65 +61,98 @@
 		</div>
 
 	</div>
+	<div class="todaysWeatherTitle">
+		<b><i>5-Day Weather Forecast: </i></b>
+	</div>
 	<div class="fiveDayWeatherContainer">
 
 		<div class="todayWeatherContainer">
-			<c:forEach var="weather" items="${weather}">
-				<div id="todayWeatherTitle">
-					<b><i>Today's Weather: </i></b>
-				</div>
-				<div id="todayWeatherPic">
-					<a> <img src="img/weather/${weather.forecast}">
-					</a>
-				</div>
-				<div class="todayWeatherTempContainer">
-					<div class="todayWeatherTempHighContainer">
-						<div id="todayWeatherHighTitle">
-							<b> <i>High:</i></b>
+			<c:forEach var="todayWeather" items="${weather}">
+
+				<c:choose>
+					<c:when test="${todayWeather.dayForForcast > 0}">
+						<div class="weatherByDay">
+							<div >
+								<img id="weatherPicDayOne" src="img/weather/${todayWeather.forecast}.png">
+							</div>
+							<div class="todayWeatherTempContainer">
+								<div class="todayWeatherTempHighContainer" >
+									<div id="todayWeatherHighLowTitle">
+										<b> <i>High:</i></b>
+									</div>
+									<div id="todayWeatherHighTemp">${todayWeather.highTemperature}</div>
+								</div>
+								<div>
+								
+									<div id="todayWeatherHighTitle">
+										<b> <i>Low:</i></b>
+									</div>
+									<div id="todayWeatherLowTemp">${todayWeather.lowTemperature}</div>
+								</div>
+							</div>
+							<div id="todayWeatherAdvisoryContainer">
+								<div id="advisoryOne">
+									<c:choose>
+										<c:when test="${todayWeather.forecast == 'thunderstrorms'}">
+											<div>
+												<b><i>Weather Advisory: </i></b>Please seek shelter and
+												avoid hiking on exposed ridges.
+											</div>
+										</c:when>
+										<c:when test="${todayWeather.forecast == 'sunny'}">
+											<div>
+												<b><i>Weather Advisory: </i></b>Be sure to pack sunblock.
+											</div>
+										</c:when>
+										<c:when test="${todayWeather.forecast == 'snow'}">
+											<div>
+												<b><i>Weather Advisory: </i></b>Be sure to pack snowshoes.
+											</div>
+										</c:when>
+										<c:when test="${todayWeather.forecast == 'rain'}">
+											<div>
+												<b><i>Weather Advisory: </i></b>Be sure to pack rain gear
+												and wear waterproof shoes.
+											</div>
+										</c:when>
+										<c:otherwise>
+											<div></div>
+										</c:otherwise>
+									</c:choose>
+								</div>
+							
+							<div id="advisoryTwo">
+								<c:choose>
+									<c:when test="${todayWeather.highTemperature >= 75}">
+										<div><b><i>Weather Advisory: </i></b>Park Service recommends to bring an extra gallon of
+											water.</div>
+									</c:when>
+									<c:when
+										test="${todayWeather.highTemperature - todayWeather.lowTemperature  >= 20}">
+										<div><b><i>Weather Advisory: </i></b>Be sure to wear breathable layers.</div>
+									</c:when>
+									<c:when test="${todayWeather.lowTemperature <= 20}">
+										<div><b><i>Weather Advisory: </i></b>Be sure to warn the user of the dangers of exposure
+											to frigid temperatures.</div>
+									</c:when>
+									<c:otherwise>
+										<div>HAVE FUN!</div>
+									</c:otherwise>
+								</c:choose>
+							</div>
 						</div>
-						<div id="todayWeatherHighTemp">${weather.highTemperature}</div>
-					</div>
-					<div class="todayWeatherTempLowContainer">
-						<div id="todayWeatherLowTitle">
-							<b> <i>Low:</i></b>
 						</div>
-						<div id="todayWeatherLowTemp">${weather.highTemperature}</div>
-					</div>
-				</div>
-				<div id="todayWeatherAdvisoryContainer">
-					<div id="todayWeatherAdvisoryTitle">
-						<b><i>Today's Advisory:</i></b>
-					</div>
-					<div id="todayWeatherAdvisoryMessage">Wear a rain coat?</div>
-				</div>
+					</c:when>
+
+				</c:choose>
+
+
+
 			</c:forEach>
 		</div>
 
-		<!-- <div class="afterTodayWeatherContainer">
-
-			<div id="afterTodayWeatherTitle">
-				<i> <b>Today's Weather:</b>
-				</i>
-			</div>
-			<div id="afterTodayWeatherPic">
-				<img src=#>
-			</div>
-			<div class="afterTodayWeatherTempContainer">
-				<div class="afterTodayWeatherTempHighContainer">
-					<div id="afterTodayWeatherHighTitle">
-						<b> <i>High:</i></b>
-					</div>
-					<div id="afterTodayWeatherHighTemp">79º</div>
-				</div>
-				<div class="afterTodayWeatherTempLowContainer">
-					<div id="afterTodayWeatherLowTitle">
-						<b> <i>Low:</i></b>
-					</div>
-					<div id="afterTodayWeatherLowTemp">53º</div>
-				</div>
-			</div>
-		</div> -->
 	</div>
+
 
 
 </section>

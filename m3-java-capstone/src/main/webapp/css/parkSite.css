@@ -52,7 +52,8 @@ li {
 
 .homePageImage {
 	flex-basis: 38%;
-	width: 100%; height : auto;
+	width: 100%;
+	height: auto;
 	padding: 20px;
 	height: auto;
 	height: auto;;
@@ -178,7 +179,6 @@ li {
 
 /* survey */
 .surveyContent {
-	
 	radius: 5px;
 }
 
@@ -257,7 +257,66 @@ li {
 }
 
 #submitButton {
-	
 	text-align: center;
 	padding: 10px;
+}
+/* weather */
+#weatherPicDayOne {
+	width: 100px;
+	position: relative;
+	left: 20%;
+}
+
+.todaysWeatherTitle {
+	font-size: 3vw;
+	padding-top: 1%;
+}
+
+.weatherByDay {
+	align-items: center;
+	flex-basis: 18%;
+	padding: 10px;
+}
+
+.todayWeatherContainer {
+	display: flex;
+	align-items: flex-start;
+	width: 90%;
+}
+
+.todayWeatherTempHighContainer {
+	flex-basis: 50%;
+}
+
+.todayWeatherTempLowContainer {
+	flex-basis: auto;
+}
+
+.todayWeatherTempContainer {
+    display: inline-flex;
+    position: relative;
+    font-size: 2vh;
+    text-align: center;
+    left: 20%;
+    padding-bottom: 5px;
+}
+
+.todayWeatherTempHighContainer {
+	flex-grow: 1;
+}
+
+#todayWeatherAdvisoryContainer {
+	font-size: 1.5vh;
+}
+
+.todayWeatherTempLowContainer {
+	flex-grow: 1;
+}
+
+#advisoryTwo {
+	padding: 5px;
+}
+
+#advisoryOne {
+	padding: 5px;
 }
