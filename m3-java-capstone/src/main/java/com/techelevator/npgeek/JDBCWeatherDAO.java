@@ -23,7 +23,7 @@ public class JDBCWeatherDAO implements WeatherDAO {
 	public List<Weather> getWeatherByParkCode(String parkCode) {
 		
 		List<Weather> allWeather = new ArrayList<Weather>();
-		String sqlSelectAllWeather = "select *, Lower(parkcode) as lowerparkcode from weather" + 
+		String sqlSelectAllWeather = "select *, Lower(parkcode) as lowerparkcode from weather " + 
 				"where parkcode = ?";
 		
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectAllWeather, parkCode);
@@ -45,6 +45,12 @@ public class JDBCWeatherDAO implements WeatherDAO {
 		weather.setForecast(results.getString("forecast"));
 		
 		return weather;
+	}
+
+	@Override
+	public List<Weather> getWeather(String parkCode) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 

@@ -62,25 +62,67 @@
 
 	</div>
 	<div class="fiveDayWeatherContainer">
-		<div class="todayWeatherContainer">
-
-			<div id="todayWeatherTitle">Today's Weather</div>
-			<div id="todayWeatherPic">
-				<img src="/img/weather/cloudy.jpg">
-			</div>
-			<div class="todayWeatherTempContainer">
-				<div class="todayWeatherTempHighContainer">
-					<div id="todayWeatherHighTitle">High:</div>
-					<div id="todayWeatherHighTemp">79º</div>
+		
+			<div class="todayWeatherContainer">
+<c:forEach var="weather" items="${weather}">
+				<div id="todayWeatherTitle">
+					<b><i>Today's Weather: </i></b>
 				</div>
-				<div class="todayWeatherTempLowContainer">
-					<div id="todayWeatherLowTitle">Low:</div>
-					<div id="todayWeatherLowTemp">53º</div>
+				<div id="todayWeatherPic">
+					<a>
+						<img src="img/weather/${weather.forecast}">
+					</a>
 				</div>
-
+				<div class="todayWeatherTempContainer">
+					<div class="todayWeatherTempHighContainer">
+						<div id="todayWeatherHighTitle">
+							<b> <i>High:</i></b>
+						</div>
+						<div id="todayWeatherHighTemp">${weather.highTemperature}</div>
+					</div>
+					<div class="todayWeatherTempLowContainer">
+						<div id="todayWeatherLowTitle">
+							<b> <i>Low:</i></b>
+						</div>
+						<div id="todayWeatherLowTemp">${weather.highTemperature}</div>
+					</div>
+				</div>
+				<div id="todayWeatherAdvisoryContainer">
+					<div id="todayWeatherAdvisoryTitle">
+						<b><i>Today's Advisory:</i></b>
+					</div>
+					<div id="todayWeatherAdvisoryMessage">Wear a rain coat?</div>
+				</div>
+</c:forEach>
 			</div>
-		</div>
+		
+		<!-- <div class="afterTodayWeatherContainer">
+
+			<div id="afterTodayWeatherTitle">
+				<i> <b>Today's Weather:</b>
+				</i>
+			</div>
+			<div id="afterTodayWeatherPic">
+				<img src=#>
+			</div>
+			<div class="afterTodayWeatherTempContainer">
+				<div class="afterTodayWeatherTempHighContainer">
+					<div id="afterTodayWeatherHighTitle">
+						<b> <i>High:</i></b>
+					</div>
+					<div id="afterTodayWeatherHighTemp">79º</div>
+				</div>
+				<div class="afterTodayWeatherTempLowContainer">
+					<div id="afterTodayWeatherLowTitle">
+						<b> <i>Low:</i></b>
+					</div>
+					<div id="afterTodayWeatherLowTemp">53º</div>
+				</div>
+			</div>
+		</div> -->
 	</div>
+
+
 </section>
 
 </body>
