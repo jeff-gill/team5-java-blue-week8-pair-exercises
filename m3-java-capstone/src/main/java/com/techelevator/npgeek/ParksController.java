@@ -19,6 +19,9 @@ public class ParksController {
 	@Autowired
 	private ParkDAO parkDao;
 	
+	@Autowired
+	private WeatherDAO weatherDao;
+	
 	@RequestMapping(path="/homePage", method=RequestMethod.GET)
 	public String homePage(ModelMap model) {
 		List <Park> parks = parkDao.getAllParks();
@@ -34,7 +37,18 @@ public class ParksController {
 				request.setAttribute("park", p);
 			}
 		}
+		for(Weather w : getWeather(parkCode)) {
+			if(w.getParkCode().equals(parkCode)) {
+				request.setAttribute("weather", w);
+			}
+				
+		}
 		return "parkDetail";
+	}
+
+	private List<Weather> getWeather(String parkCode) {
+		List<Weather> weather = weatherDao.getWeatherByParkCode(parkCode);
+		return weather;
 	}
 
 	private List<Park> getParks() {
