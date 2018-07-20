@@ -62,15 +62,14 @@
 
 	</div>
 	<div class="fiveDayWeatherContainer">
-		
-			<div class="todayWeatherContainer">
-<c:forEach var="weather" items="${weather}">
+
+		<div class="todayWeatherContainer">
+			<c:forEach var="weather" items="${weather}">
 				<div id="todayWeatherTitle">
 					<b><i>Today's Weather: </i></b>
 				</div>
 				<div id="todayWeatherPic">
-					<a>
-						<img src="img/weather/${weather.forecast}">
+					<a> <img src="img/weather/${weather.forecast}">
 					</a>
 				</div>
 				<div class="todayWeatherTempContainer">
@@ -93,9 +92,9 @@
 					</div>
 					<div id="todayWeatherAdvisoryMessage">Wear a rain coat?</div>
 				</div>
-</c:forEach>
-			</div>
-		
+			</c:forEach>
+		</div>
+
 		<!-- <div class="afterTodayWeatherContainer">
 
 			<div id="afterTodayWeatherTitle">

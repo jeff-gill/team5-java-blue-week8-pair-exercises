@@ -36,7 +36,7 @@ public class ParksController {
 			if (p.getParkCode().equals(parkCode)) {
 				request.setAttribute("park", p);
 			}
-			request.setAttribute("weather", weatherDao.getWeather(parkCode));
+			request.setAttribute("weather", weatherDao.getWeatherByParkCode(parkCode));
 		}
 
 		return "parkDetail";
@@ -47,11 +47,7 @@ public class ParksController {
 		return "survey";
 	}
 
-	@SuppressWarnings("unused")
-	private List<Weather> getWeather(String parkCode) {
-		List<Weather> weather = weatherDao.getWeatherByParkCode(parkCode);
-		return weather;
-	}
+	
 
 	private List<Park> getParks() {
 		List<Park> parks = parkDao.getAllParks();
