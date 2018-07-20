@@ -9,7 +9,7 @@ a:visited {
 	text-decoration: none;
 }
 
-/* header */
+/* header.jsp */
 .nav {
 	font-family: "Helvetica, sans-serif";
 	margin-bottom: 20px;
@@ -38,7 +38,7 @@ li {
 	width: 40%;
 }
 
-/* homepage */
+/* homepage.jsp */
 .parkList {
 	background-color: green:
 }
@@ -49,18 +49,21 @@ li {
 	align-items: center;
 	text-align: left;
 }
-
+.homePageContainer{
+	position: relative;
+	flex-basis:40%;
+	    flex-basis: 60%;
+    padding: 20px;
+}
 .homePageImage {
-	flex-basis: 38%;
+
 	width: 100%;
-	height: auto;
-	padding: 20px;
-	height: auto;
-	height: auto;;
+
+
 }
 
 .homePageNameAndDetails {
-	flex-basis: 50%;
+	flex-basis: 40%;
 	display: block;
 }
 
@@ -79,7 +82,7 @@ li {
 	padding-top: 20px
 }
 
-/* parkDetail */
+/* parkDetail.jsp */
 .detailContent {
 	
 }
@@ -177,7 +180,7 @@ li {
 	flex-basis: 33%;
 }
 
-/* survey */
+/* survey.jsp */
 .surveyContent {
 	radius: 5px;
 }
@@ -319,4 +322,11 @@ li {
 
 #advisoryOne {
 	padding: 5px;
+}
+
+/* favorite.jsp */
+
+.favoriteTitleContainer{
+	width:95%;
+	margin-bottom: 2px;
 }

@@ -136,7 +136,7 @@
 											to frigid temperatures.</div>
 									</c:when>
 									<c:otherwise>
-										<div>HAVE FUN!</div>
+										<div></div>
 									</c:otherwise>
 								</c:choose>
 							</div>

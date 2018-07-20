@@ -26,7 +26,7 @@ public class ParksController {
 
 	@Autowired
 	private WeatherDAO weatherDao;
-	
+
 	@Autowired
 	private SurveyDAO surveyDao;
 
@@ -51,38 +51,37 @@ public class ParksController {
 		return "parkDetail";
 	}
 
-
-	@RequestMapping(path ="/survey", method = RequestMethod.GET)
+	@RequestMapping(path = "/survey", method = RequestMethod.GET)
 	public String showSurveyForm(ModelMap map, Model model) {
 		List<Park> parks = parkDao.getAllParks();
 		map.addAttribute("park", parks);
-		
-		if(!model.containsAttribute("survey")) {
+
+		if (!model.containsAttribute("survey")) {
 			model.addAttribute("survey", new Survey());
 		}
 		return "survey";
 
 	}
-	
+
 	@RequestMapping(path = "/survey", method = RequestMethod.POST)
-	
-	public String handleSurveyForm(
-			@Valid @ModelAttribute("survey") Survey survey,
-			BindingResult result,
-			RedirectAttributes attr,
-			ModelMap map
-			) {
-				if(result.hasErrors()) {
-					List<Park> parks = parkDao.getAllParks();
-					map.addAttribute("park", parks);
-					return "survey";
-				}
-				surveyDao.createSurvey(survey);
-				return "redirect:/homePage";
+
+	public String handleSurveyForm(@Valid @ModelAttribute("survey") Survey survey, BindingResult result,
+			RedirectAttributes attr, ModelMap map) {
+		if (result.hasErrors()) {
+			List<Park> parks = parkDao.getAllParks();
+			map.addAttribute("park", parks);
+			return "survey";
+		}
+		surveyDao.createSurvey(survey);
+		return "redirect:/homePage";
 	}
 
-	
+	@RequestMapping("/favorites")
 
+	public String showFavoritesForm() {
+
+		return "favorites";
+	}
 
 	private List<Park> getParks() {
 		List<Park> parks = parkDao.getAllParks();

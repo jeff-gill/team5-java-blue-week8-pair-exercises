@@ -6,9 +6,9 @@
 <div>
 	<c:forEach items="${parks}" var="park">
 		<div class="parkContainer">
-			<div class="homePageImage">
+			<div class="homePageContainer">
 				<a href="<c:url value="parkDetail?parkCode=${park.parkCode}" />">
-					<img src="img/parks/${park.parkCode}.jpg" />
+					<img class="homePageImage" src="img/parks/${park.parkCode}.jpg" />
 				</a>
 			</div>
 			<div class="homePageNameAndDetails">
