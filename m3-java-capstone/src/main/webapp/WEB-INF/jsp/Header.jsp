@@ -7,14 +7,16 @@
 <link rel="stylesheet" href="css/parkSite.css" />
 </head>
 <body>
-		<div>
+<div class="headerBar">
+		<div class="headerContainer">
 			<img class="logoPic" src=" img/logo.png" />
 		</div>
 		<div class="navBar">
 			<nav>
 				<ul class="navBarItems">
-					<li><a href=#>Home</a></li>
-					<li><a href=#>Survey</a></li>
+					<li><a href="/m3-java-capstone/homePage">Home</a></li>
+					<li><a href="/m3-java-capstone/survey">Survey</a></li>
 				</ul>
 			</nav>
 		</div>
+</div>

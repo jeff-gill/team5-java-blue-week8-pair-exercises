@@ -45,6 +45,10 @@ public class ParksController {
 		}
 		return "parkDetail";
 	}
+	@RequestMapping("/survey")
+		public String showSurveyForm() {
+		return "survey";
+		}
 
 	private List<Weather> getWeather(String parkCode) {
 		List<Weather> weather = weatherDao.getWeatherByParkCode(parkCode);

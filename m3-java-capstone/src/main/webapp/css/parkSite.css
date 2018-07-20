@@ -1,45 +1,46 @@
 a:link {
+	color: inherit;
 	text-decoration: none;
 	color: white;
-	
 }
+
 a:visited {
+	color: inherit;
 	text-decoration: none;
 }
 
 /* header */
 .nav {
+	font-family: "Helvetica, sans-serif";
 	margin-bottom: 20px;
 	padding: 5px;
 	height: 50px;
 	width: 80em;
 	font-weight: bold;
-		align-items: center;
+	margin-bottom: 20px;
 }
+
 .navBarItems {
 	background-color: black;
 	height: 2em;
-	font-size: 2em;
-	
-	
+	font-size: 2vw;
+	font-family: Verdana;
 }
+
 li {
 	display: inline-block;
 	color: white;
 	padding-left: 20px;
-
+	padding-top: 10px;
 }
 
 .logoPic {
 	width: 40%;
 }
 
-
-
 /* homepage */
 .parkList {
 	background-color: green:
-	radius: 20;
 }
 
 .parkContainer {
@@ -50,23 +51,31 @@ li {
 }
 
 .homePageImage {
-	flex-basis:38%;
+	flex-basis: 38%;
+	width: 100%; height : auto;
 	padding: 20px;
+	height: auto;
+	height: auto;;
 }
 
 .homePageNameAndDetails {
 	flex-basis: 50%;
+	display: block;
 }
 
 #homePageParkName {
-align-items: center;
-color: #000;
-font-weight: bold;font-size: 20px;
-	
+	position: relative;
+	align-items: center;
+	color: #000;
+	font-weight: bold;
+	font-size: 3vw;
+	margin-bottom: 20px;
+	align-items: center;
 }
 
 .homePageParkDescription {
-	
+	font-size: 1.5vw;
+	padding-top: 20px
 }
 
 /* parkDetail */
@@ -74,22 +83,181 @@ font-weight: bold;font-size: 20px;
 	
 }
 
-.parkDetailsContainer {
+.detailsImageParkNameStateContainer {
 	
 }
 
-.detailImage {
-	
+.detailImage img {
+	width: 90%;
 }
 
-.detailParkTitleBar {
-	
+.detailParkNameStateSubContainer {
+	position: block;
+	padding-bottom: 20px;
 }
 
-.detailParkName {
-	
+#detailParkName {
+	font-family: Verdana;
+	font-size: 40px;
+	font-weight: bold;
+	text-align: left;
+	font-size: 4vw;
 }
 
-.detailParkState {
+#detailState {
+	font-size: 2vw;
+	text-align: left;
+}
+
+.detailQuoteContainer {
+	position: block, inline;
+	background-color: #b3ff99;
+	width: 90%;
+	border-radius: 10px;
+	padding: 5px;
+	font-weight: 200;
+}
+
+#detailQuote {
+	font-size: 2vw;;
+}
+
+#detailQuoteSource {
+	font-size: 1vw;
+	text-align: left;
+	padding-left: 50px;
+}
+
+.parkAmmenitiesContainer {
+	font-family: Arial;
+	padding-top: 20px;
+	position: relative;
+	width: 90%;
+}
+
+.parkAmmenitiesDescription {
+	position: relative;
+	border-width: 2px 2px 0px 2px;
+	border-style: groove;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	font-size: 1.5vw;
+	padding: 10px;
+}
+
+.parkAmmenitiesDetailsContainer {
+	display: flex;
+	border-style: groove;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-width: 2px;
+	font-size: 1.5vw;
+}
+
+#leftParkAmmenities {
+	position: relative;
+	border-width: 1px;
+	border-right-style: dashed;
+	padding: 5px 10px 15px 20px;
+	flex-basis: 33%;
+}
+
+#middleParkAmmenities {
+	position: relative;
+	border-width: 1px;
+	border-right-style: dashed;
+	padding: 5px 10px 15px 20px;
+	flex-basis: 33%;
+}
+
+#rightParkAmmenities {
+	position: relative;
+	padding: 5px 10px 15px 20px;
+	flex-basis: 33%;
+}
+
+/* survey */
+.surveyContent {
 	
+	radius: 5px;
+}
+
+.introBar {
+	width: 90%;
+}
+
+#introTitle {
+	font-size: 2vw;
+}
+
+#introThanks {
+	font-size: 1.5vw;
+}
+
+.surveyQuestionsContainer {
+	background-color: #a6f2ff;
+	border-radius: 10px;
+}
+
+#favoriteParkContainer {
+	display: flex;
+	padding: 10px;
+}
+
+#surveyParkTitle {
+	flex-basis: 20%;
+	font-size: 1.5vw;
+}
+
+#surveyParkChoice {
+	flex-basis: 60%;
+}
+
+#favoritEmailContainer {
+	display: flex;
+	padding: 10px;
+}
+
+#surveyEmailTitle {
+	flex-basis: 20%;
+	font-size: 1.5vw;
+}
+
+#surveyEmailChoice {
+	flex-basis: 60%;
+	size
+}
+
+#favoriteStateContainer {
+	display: flex;
+	padding: 10px;
+}
+
+#surveyStateTitle {
+	flex-basis: 20%;
+	font-size: 1.5vw;
+}
+
+#surveyStateChoice {
+	flex-basis: 60%;
+}
+
+#activityLevelContainer {
+	display: flex;
+	padding: 10px;
+}
+
+#surveyActivityTitle {
+	flex-basis: 20%;
+	font-size: 1.5vw;
+}
+
+#surveyActivityChoice {
+	flex-basis: 60%;
+}
+
+#submitButton {
+	
+	text-align: center;
+	padding: 10px;
 }
