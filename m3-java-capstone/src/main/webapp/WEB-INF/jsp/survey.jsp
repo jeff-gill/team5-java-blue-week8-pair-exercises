@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <c:import url="/WEB-INF/jsp/Header.jsp" />
 
@@ -13,104 +14,113 @@
 			survey. With your help, we will be able to make sure people have the
 			best information when heading of to visit America's favorite National
 			Parks.</p>
+			
+		<c:url var = "favoriteParkSurvey" value ="/survey"/>	
+		<form:form action = "${favoriteParkSurvey}" method = "POST" modelAttribute = "survey">	
 		<div class="surveyQuestionsContainer">
 			<div id="favoriteParkContainer">
 				<div id="surveyParkTitle">
 					Favorite National Park:</div>
 					<div id="surveyParkChoice">
-						<select name="surveyChoice">
-							<option value="Choose a Park">Choose a Park</option>
-							<c:forEach items="${park.parkName}" var="favorite">
-								<option value="${park.parkName}">${park.parkName}</option>
+						<form:select path="favoritePark">
+							<form:option value="" label = "Choose a Park"/>
+							<c:forEach items="${park}" var="parkChoice">
+								<form:option value="${parkChoice.parkCode}" label = "${parkChoice.parkName}"/>
 							</c:forEach>
-						</select>
+						</form:select>
+						<form:errors path = "favoritePark"/>
 					</div>
 			</div>
 			<div id="favoritEmailContainer">
 				<div id="surveyEmailTitle">Your Email:</div>
 				<div id="surveyEmailChoice">
-					<form id="surveyChoice">
-						<input type="text" name="email" id="surveyEmailEntry"
+					<a id="surveyChoice">
+						<label for = "email">Email</label>
+						<form:input type="text" path="email" id="surveyEmailEntry"
 							placeholder="Enter valid email address" size="35"/>
-					</form>
+						<form:errors path = "email"/>	
+					</a>
 				</div>
 
 			</div>
 			<div id="favoriteStateContainer">
 				<div id="surveyStateTitle">State of Residence:</div>
 				<div id=surveyStateChoice>
-				<select name="surveyChoice">
-					<option value="State of Residence">State of Residence</option>
-					<option value="AL">Alabama</option>
-					<option value="AK">Alaska</option>
-					<option value="AZ">Arizona</option>
-					<option value="AR">Arkansas</option>
-					<option value="CA">California</option>
-					<option value="CO">Colorado</option>
-					<option value="CT">Connecticut</option>
-					<option value="DE">Delaware</option>
-					<option value="DC">District Of Columbia</option>
-					<option value="FL">Florida</option>
-					<option value="GA">Georgia</option>
-					<option value="HI">Hawaii</option>
-					<option value="ID">Idaho</option>
-					<option value="IL">Illinois</option>
-					<option value="IN">Indiana</option>
-					<option value="IA">Iowa</option>
-					<option value="KS">Kansas</option>
-					<option value="KY">Kentucky</option>
-					<option value="LA">Louisiana</option>
-					<option value="ME">Maine</option>
-					<option value="MD">Maryland</option>
-					<option value="MA">Massachusetts</option>
-					<option value="MI">Michigan</option>
-					<option value="MN">Minnesota</option>
-					<option value="MS">Mississippi</option>
-					<option value="MO">Missouri</option>
-					<option value="MT">Montana</option>
-					<option value="NE">Nebraska</option>
-					<option value="NV">Nevada</option>
-					<option value="NH">New Hampshire</option>
-					<option value="NJ">New Jersey</option>
-					<option value="NM">New Mexico</option>
-					<option value="NY">New York</option>
-					<option value="NC">North Carolina</option>
-					<option value="ND">North Dakota</option>
-					<option value="OH">Ohio</option>
-					<option value="OK">Oklahoma</option>
-					<option value="OR">Oregon</option>
-					<option value="PA">Pennsylvania</option>
-					<option value="RI">Rhode Island</option>
-					<option value="SC">South Carolina</option>
-					<option value="SD">South Dakota</option>
-					<option value="TN">Tennessee</option>
-					<option value="TX">Texas</option>
-					<option value="UT">Utah</option>
-					<option value="VT">Vermont</option>
-					<option value="VA">Virginia</option>
-					<option value="WA">Washington</option>
-					<option value="WV">West Virginia</option>
-					<option value="WI">Wisconsin</option>
-					<option value="WY">Wyoming</option>
-				</select>
+				<form:select path="stateOfResidence">
+					<form:option value="" label = "State of Residence"/>
+					<form:option value="AL" label = "Alabama"/>
+					<form:option value="AK" label = "Alaska"/>
+					<form:option value="AZ" label = "Arizon"/>
+					<form:option value="AR" label = "Arkansas"/>
+					<form:option value="CA" label = "California"/>
+					<form:option value="CO" label = "Colorado"/>
+					<form:option value="CT" label = "Connecticut"/>
+					<form:option value="DE" label = "Delaware"/>
+					<form:option value="DC" label = "District Of Columbia"/>
+					<form:option value="FL" label = "Florida"/>
+					<form:option value="GA" label = "Georgia"/>
+					<form:option value="HI" label ="Hawaii"/>
+					<form:option value="ID" label ="Idaho"/>
+					<form:option value="IL" label = "Illinois"/>
+					<form:option value="IN" label="Indiana"/>
+					<form:option value="IA" label= "Iowa"/>
+					<form:option value="KS" label="Kansas"/>
+					<form:option value="KY" label="Kentucky"/>
+					<form:option value="LA" label="Louisiana"/>
+					<form:option value="ME" label="Maine"/>
+					<form:option value="MD" label="Maryland"/>
+					<form:option value="MA" label ="Massachusetts"/>
+					<form:option value="MI" label= "Michigan"/>
+					<form:option value="MN" label = "Minnesota"/>
+					<form:option value="MS" label = "Mississippi"/>
+					<form:option value="MO" label = "Missouri"/>
+					<form:option value="MT" label = "Montana"/>
+					<form:option value="NE" label = "Nebraska"/>
+					<form:option value="NV" label = "Nevada"/>
+					<form:option value="NH" label = "New Hampshire"/>
+					<form:option value="NJ" label = "New Jersey"/>
+					<form:option value="NM" label = "New Mexico"/>
+					<form:option value="NY" label = "New York"/>
+					<form:option value="NC" label ="North Carolina"/>
+					<form:option value="ND" label ="North Dakota"/>
+					<form:option value="OH" label ="Ohio"/>
+					<form:option value="OK" label ="Oklahoma"/>
+					<form:option value="OR" label ="Oregon"/>
+					<form:option value="PA" label = "Pennsylvania"/>
+					<form:option value="RI" label = "Rhode Island"/>
+					<form:option value="SC" label = "South Carolina"/>
+					<form:option value="SD" label = "South Dakota"/>
+					<form:option value="TN" label = "Tennessee"/>
+					<form:option value="TX" label = "Texas"/>
+					<form:option value="UT" label = "Utah"/>
+					<form:option value="VT" label = "Vermont"/>
+					<form:option value="VA" label = "Virginia"/>
+					<<form:option value="WA" label = "Washington"/>
+					<<form:option value="WV" label = "West Virginia"/>
+					<form:option value="WI" label = "Wisconsin"/>
+					<form:option value="WY" label = "Wyoming"/>
+				</form:select>
+				<form:errors path = "stateOfResidence"/>
 				</div>
 			</div>
 
 			<div id="activityLevelContainer">
 				<div id="surveyActivityTitle">Activity Level:</div>
 				<div id="surveyActivityChoice">
-					<input type="radio" name="activity" value="Inactive">
-					Inactive <input type="radio" name="activity" value="Sedentary">
-					Sedentary <input type="radio" name="activity" value="Active">
-					Active <input type="radio" name="activity" value="Extremely Active">
-					Extremely Active
+					<label for = "activityLevel">Activity Level</label>
+					<form:radiobutton path = "activityLevel" value="Inactive" label ="Inactive" />
+					<form:radiobutton path ="activityLevel" value="Sedentary" label="Sedentary"/> 
+					<form:radiobutton path ="activityLevel" value="Active"  label="Active" />
+					<form:radiobutton path ="activityLevel" value="Extremely Active" label="Extremely Active"/>
 				</div>
+				<form:errors path = "activityLevel"/>
 			</div>
 			<div id="submitButton">
 				<input class="formSubmitButton" type="submit" value="Submit" />
+				
 			</div>
 		</div>
-
+	</form:form>
 
 	</div>
 	</div>

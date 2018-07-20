@@ -20,11 +20,12 @@ public class JDBCSurveyDAO implements SurveyDAO{
 	}
 
 	@Override
-	public void createSurvey(String favoritePark, String email, String stateOfResidence, String activityLevel) {
-		
-		String sqlCreateSurvey = "insert into survey_result (parkcode, emailaddress, state, activitylevel) "
-								+ "values (?, ?, ?, ?)";
-		
+	public void createSurvey(Survey post) {
+		//Long id = getNextId();
+		String sqlInsertSurvey = "insert into survey_result (parkcode, emailaddress, state, activitylevel)" + 
+				"values (?, ?, ?, ?)";
+		jdbcTemplate.update(sqlInsertSurvey, post.getFavoritePark(), post.getEmail(), post.getStateOfResidence(), post.getActivityLevel());
+		//post.setId(id);
 	}
 
 
@@ -32,9 +33,9 @@ public class JDBCSurveyDAO implements SurveyDAO{
 	public List<FavoriteParks> getSurveyResults(String parkCode, String parkName, int voteCount) {
 		
 		List<FavoriteParks> favoritePark = new ArrayList<FavoriteParks>();
-		String sqlSelectSurveyResults = "select parkname, Lower(survey_result.parkcode) as lowerparkcode, count (survey_result.parkcode) as parkcodecount from survey_result\n" + 
-				"join park on survey_result.parkcode = park.parkcode\n" + 
-				"group by survey_result.parkcode, park.parkname\n" + 
+		String sqlSelectSurveyResults = "select parkname, Lower(survey_result.parkcode) as lowerparkcode, count (survey_result.parkcode) as parkcodecount from survey_result" + 
+				"join park on survey_result.parkcode = park.parkcode" + 
+				"group by survey_result.parkcode, park.parkname" + 
 				"order by count (survey_result.parkcode) DESC";
 		
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectSurveyResults);
@@ -53,6 +54,20 @@ public class JDBCSurveyDAO implements SurveyDAO{
 		favoritePark.setVoteCount(results.getInt("parkcodecount"));
 		
 		return favoritePark;
+	}
+
+	
+	
+	private Long getNextId() {
+		String sqlSelectNextId = "select nextval ('seq_surveyid')";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectNextId);
+		Long id = null;
+		if(results.next()) {
+			id = results.getLong(1);
+		} else {
+			throw new RuntimeException("Something strange happened, unable to select next survey post id from sequence");
+		}
+		return id;
 	}
 
 	

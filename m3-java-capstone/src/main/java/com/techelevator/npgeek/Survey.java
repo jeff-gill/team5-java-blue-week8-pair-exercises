@@ -5,6 +5,17 @@ import org.hibernate.validator.constraints.NotBlank;
 
 public class Survey {
 	
+	private Long id;
+	private String parkCode;
+	
+	public String getParkCode() {
+		return parkCode;
+	}
+
+	public void setParkCode(String parkCode) {
+		this.parkCode = parkCode;
+	}
+
 	@NotBlank(message="Please choose a favorite National Park")
 	private String favoritePark;
 	
@@ -48,6 +59,14 @@ public class Survey {
 
 	public void setActivityLevel(String activityLevel) {
 		this.activityLevel = activityLevel;
+	}
+	
+	public Long getId() {
+		return id;
+	}
+	
+	public void setId(Long id) {
+		this.id = id;
 	}
 	
 	
