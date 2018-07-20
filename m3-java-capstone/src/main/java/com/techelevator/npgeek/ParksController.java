@@ -15,44 +15,47 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 @SessionAttributes()
 
 public class ParksController {
-	
+
 	@Autowired
 	private ParkDAO parkDao;
-	
+
 	@Autowired
 	private WeatherDAO weatherDao;
-	
-	@RequestMapping(path="/homePage", method=RequestMethod.GET)
+
+	@RequestMapping(path = "/homePage", method = RequestMethod.GET)
 	public String homePage(ModelMap model) {
-		List <Park> parks = parkDao.getAllParks();
+		List<Park> parks = parkDao.getAllParks();
 		model.addAttribute("parks", parks);
 		return "homePage";
 	}
-	
+
 	@RequestMapping("/parkDetail")
 	public String parkDetail(HttpServletRequest request) {
 		String parkCode = request.getParameter("parkCode");
-		for(Park p : getParks()) {
-			if(p.getParkCode().equals(parkCode)) {
+		for (Park p : getParks()) {
+			if (p.getParkCode().equals(parkCode)) {
 				request.setAttribute("park", p);
 			}
-			request.setAttribute("weather", weatherDao.getWeatherByParkCode(parkCode));		
+
+			request.setAttribute("weather", weatherDao.getWeatherByParkCode(parkCode));
 		}
-		
+
 		return "parkDetail";
 	}
-	
+
+
 	@RequestMapping("/survey")
-		public String showSurveyForm() {
+	public String showSurveyForm() {
 		return "survey";
-		}
 
+	}
 
 	
+
+
 	private List<Park> getParks() {
 		List<Park> parks = parkDao.getAllParks();
 		return parks;
 	}
-
 
 }

@@ -7,4 +7,5 @@ public interface WeatherDAO {
 	
 	List<Weather> getWeatherByParkCode(String parkCode);
 
+
 }
