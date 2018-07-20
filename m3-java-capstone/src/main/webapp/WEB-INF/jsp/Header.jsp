@@ -15,7 +15,7 @@
 			<nav>
 				<ul class="navBarItems">
 					<li><a href="/m3-java-capstone/homePage">Home</a></li>
-					<li><a href=#>Survey</a></li>
+					<li><a href="/m3-java-capstone/survey">Survey</a></li>
 				</ul>
 			</nav>
 		</div>

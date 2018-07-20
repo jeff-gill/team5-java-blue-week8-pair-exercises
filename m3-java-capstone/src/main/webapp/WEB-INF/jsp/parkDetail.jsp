@@ -32,12 +32,12 @@
 					${park.annualVisitorCount}
 				</p> <a> <b>Year founded:</b> ${park.yearFounded}
 				</a>
-			</div>
+		</div>
 			<div id="middleParkAmmenities">
 				<p> <b>Park Acreage:</b> ${park.acerage}
 				</p><p><b>Number of Campsites</b> :
 					${park.numberOfCampsites} </p><a> <b>Entry Fee:</b>
-					${park.entryFee}
+					$${park.entryFee}.00
 				</a>
 			</div>
 			<div id="rightParkAmmenities">
@@ -50,6 +50,10 @@
 
 		</div>
 
+	</div>
+	<div class="weatherContainer">
+	
+	
 	</div>
 </section>
 
