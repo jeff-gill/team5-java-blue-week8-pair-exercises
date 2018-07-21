@@ -30,7 +30,7 @@ public class JDBCSurveyDAO implements SurveyDAO{
 
 
 	@Override
-	public List<FavoriteParks> getSurveyResults(String parkCode, String parkName, int voteCount) {
+	public List<FavoriteParks> getSurveyResults() {
 		
 		List<FavoriteParks> favoritePark = new ArrayList<FavoriteParks>();
 		String sqlSelectSurveyResults = "select parkname, Lower(survey_result.parkcode) as lowerparkcode, count (survey_result.parkcode) as parkcodecount from survey_result" + 

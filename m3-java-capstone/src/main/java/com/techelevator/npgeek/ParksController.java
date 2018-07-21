@@ -73,13 +73,12 @@ public class ParksController {
 			return "survey";
 		}
 		surveyDao.createSurvey(survey);
-		return "redirect:/homePage";
+		return "redirect:/favorites";
 	}
 
-	@RequestMapping("/favorites")
-
-	public String showFavoritesForm() {
-
+	@RequestMapping(path = "/favorites", method = RequestMethod.GET)
+	public String showFavoritesForm(ModelMap map) {
+		map.addAttribute("favoritesForm", surveyDao.getSurveyResults());
 		return "favorites";
 	}
 
