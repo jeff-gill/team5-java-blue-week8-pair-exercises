@@ -49,17 +49,16 @@ li {
 	align-items: center;
 	text-align: left;
 }
-.homePageContainer{
+
+.homePageContainer {
 	position: relative;
-	flex-basis:40%;
-	    flex-basis: 60%;
-    padding: 20px;
+	flex-basis: 40%;
+	flex-basis: 60%;
+	padding: 20px;
 }
+
 .homePageImage {
-
 	width: 100%;
-
-
 }
 
 .homePageNameAndDetails {
@@ -296,12 +295,12 @@ li {
 }
 
 .todayWeatherTempContainer {
-    display: inline-flex;
-    position: relative;
-    font-size: 2vh;
-    text-align: center;
-    left: 20%;
-    padding-bottom: 5px;
+	display: inline-flex;
+	position: relative;
+	font-size: 2vh;
+	text-align: center;
+	left: 20%;
+	padding-bottom: 5px;
 }
 
 .todayWeatherTempHighContainer {
@@ -325,8 +324,41 @@ li {
 }
 
 /* favorite.jsp */
+.favoriteTitleContainer {
+	width: 95%;
+	border-bottom: 2px solid black;;
+}
 
-.favoriteTitleContainer{
-	width:95%;
-	margin-bottom: 2px;
+.favoriteParksListContainer {
+	padding: 20px;
+	padding-top: 15px;
+	position: relative;
+	border-bottom: 2px solid black;
+}
+
+#favoriteParksItemContainer {
+	display: flex;
+	align-items: center;
+	
+}
+
+#favoriteParkPicDIV {
+	flex-basis: 20%;
+
+}
+#favoriteParkPic{
+	width: 80%;
+}
+
+
+#favoriteParkName {
+	flex-basis: 40%;
+	font-size: 3vh;
+}
+
+#favoriteParkCount {
+	flex-basis: 30%;
+	font-size:3vh;
+	height: 100%;
+	
 }

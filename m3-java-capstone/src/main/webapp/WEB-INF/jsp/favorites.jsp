@@ -18,11 +18,14 @@
 	</div>
 	<div class="favoriteParksListContainer">
 		<div id="favoriteParksItemContainer">
-			<div id="favoriteParkPicture"></div>
-			<div id="favoriteParkName"></div>
-			<div id="favoriteParkCount"></div>
+			<div id="favoriteParkPicDIV">
+				<img id="favoriteParkPic" src="img/parks/cvnp.jpg">
+			</div>
+			<div id="favoriteParkName">Great Smoky Mountains National Park
+			</div>
+			<div id="favoriteParkCount">4 votes</div>
 		</div>
-	</div>
+	</div> 
 </section>
 </body>
 </html>
