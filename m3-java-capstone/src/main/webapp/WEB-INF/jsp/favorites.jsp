@@ -18,14 +18,16 @@
 	</div>
 	<div class="favoriteParksListContainer">
 		<div id="favoriteParksItemContainer">
-			<div id="favoriteParkPicDIV">
-				<img id="favoriteParkPic" src="img/${favoritesForm.parkCode}.jpg">
-			</div>
-			<div id="favoriteParkName">Great Smoky Mountains National Park
-			</div>
-			<div id="favoriteParkCount">4 votes</div>
+			<c:forEach items="${favorites}" var="favoritePark">
+				<div id="favoriteParkPicDIV">
+					<img id="favoriteParkPic" src="img/${park.parkCode}.jpg">
+				</div>
+				<div id="favoriteParkName">Great Smoky Mountains National Park
+				</div>
+				<div id="favoriteParkCount">4 votes</div>
+			</c:forEach>
 		</div>
-	</div> 
+	</div>
 </section>
 </body>
 </html>

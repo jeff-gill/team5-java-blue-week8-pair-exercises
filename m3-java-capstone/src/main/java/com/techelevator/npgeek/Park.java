@@ -16,7 +16,7 @@ public class Park {
 	private String parkDescription;
 	private int entryFee;
 	private int numberOfAnimalSpecies;
-	private int voteCount;
+	private long voteCount;
 	
 	
 	public String getParkCode() {
@@ -109,13 +109,12 @@ public class Park {
 	public void setNumberOfAnimalSpecies(int numberOfAnimalSpecies) {
 		this.numberOfAnimalSpecies = numberOfAnimalSpecies;
 	}
-	public int getVoteCount() {
+	public long getVoteCount() {
 		return voteCount;
 	}
-	public void setVoteCount(int voteCount) {
+	public void setVoteCount(long voteCount) {
 		this.voteCount = voteCount;
 	}
-	
 	public String codeToLowerCase() {
 		String toLowerCase = parkCode.toLowerCase();
 		

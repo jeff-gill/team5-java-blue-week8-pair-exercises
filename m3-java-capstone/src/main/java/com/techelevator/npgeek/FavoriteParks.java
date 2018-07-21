@@ -3,7 +3,7 @@ package com.techelevator.npgeek;
 public class FavoriteParks{
 	private String parkCode;
 	private String parkName;
-	private int voteCount;
+	private long voteCount;
 	
 	public String getParkCode() {
 		return parkCode;
@@ -17,10 +17,10 @@ public class FavoriteParks{
 	public void setParkName(String parkName) {
 		this.parkName = parkName;
 	}
-	public int getVoteCount() {
+	public long getVoteCount() {
 		return voteCount;
 	}
-	public void setVoteCount(int voteCount) {
+	public void setVoteCount(long voteCount) {
 		this.voteCount = voteCount;
 	}
 	

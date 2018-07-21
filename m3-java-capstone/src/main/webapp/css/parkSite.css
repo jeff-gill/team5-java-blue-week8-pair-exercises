@@ -265,12 +265,12 @@ li {
 /* weather */
 #weatherPicDayOne {
 	width: 100px;
-	position: relative;
 	left: 20%;
 }
 
 .todaysWeatherTitle {
-	font-size: 3vw;
+	font-size: 2
+	2vw;
 	padding-top: 1%;
 }
 
@@ -308,7 +308,7 @@ li {
 }
 
 #todayWeatherAdvisoryContainer {
-	font-size: 1.5vh;
+	font-size: 2vh;
 }
 
 .todayWeatherTempLowContainer {

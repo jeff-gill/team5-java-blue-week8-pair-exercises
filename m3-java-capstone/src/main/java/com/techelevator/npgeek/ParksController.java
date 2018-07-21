@@ -29,6 +29,9 @@ public class ParksController {
 
 	@Autowired
 	private SurveyDAO surveyDao;
+	
+	@Autowired
+	private FavoriteParksDAO favoriteParksDao;
 
 	@RequestMapping(path = "/homePage", method = RequestMethod.GET)
 	public String homePage(ModelMap model) {
@@ -78,13 +81,22 @@ public class ParksController {
 
 	@RequestMapping(path = "/favorites", method = RequestMethod.GET)
 	public String showFavoritesForm(ModelMap map) {
-		map.addAttribute("favoritesForm", surveyDao.getSurveyResults());
+		List<FavoriteParks> favorites = surveyDao.getSurveyResults();
+		map.addAttribute("favorites", favorites);
 		return "favorites";
 	}
 
 	private List<Park> getParks() {
 		List<Park> parks = parkDao.getAllParks();
 		return parks;
+	}
+
+	public FavoriteParksDAO getFavoriteParksDao() {
+		return favoriteParksDao;
+	}
+
+	public void setFavoriteParksDao(FavoriteParksDAO favoriteParksDao) {
+		this.favoriteParksDao = favoriteParksDao;
 	}
 
 }

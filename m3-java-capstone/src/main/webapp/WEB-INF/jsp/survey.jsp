@@ -35,9 +35,9 @@
 				<div id="surveyEmailTitle">Your Email:</div>
 				<div id="surveyEmailChoice">
 					<a id="surveyChoice">
-						<label for = "email">Email</label>
+						<label for = "email">
 						<form:input type="text" path="email" id="surveyEmailEntry"
-							placeholder="Enter valid email address" size="35"/>
+							placeholder="Enter valid email address" size="35"/></label>
 						<form:errors path = "email"/>	
 					</a>
 				</div>
