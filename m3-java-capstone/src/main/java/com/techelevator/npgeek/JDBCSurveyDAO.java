@@ -33,10 +33,11 @@ public class JDBCSurveyDAO implements SurveyDAO{
 	public List<FavoriteParks> getSurveyResults() {
 		
 		List<FavoriteParks> favoritePark = new ArrayList<FavoriteParks>();
-		String sqlSelectSurveyResults = "select parkname, Lower(survey_result.parkcode) as lowerparkcode, count (survey_result.parkcode) as parkcodecount from survey_result " + 
-				"join park on survey_result.parkcode = park.parkcode " + 
-				"group by survey_result.parkcode, park.parkname " + 
-				"order by count (survey_result.parkcode) DESC";
+		String sqlSelectSurveyResults = "select count(park.parkcode) as parkcodecount, survey_result.parkcode, park.parkname from survey_result " + 
+				"join park on survey_result.parkcode = lower(park.parkcode) " + 
+				"group by survey_result.parkcode, park.parkname "; //+ 
+				//"having count(park.parkcode) > 1 " + 
+				//"order by count(park.parkcode) DESC limit 5";
 		
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectSurveyResults);
 		
@@ -49,26 +50,26 @@ public class JDBCSurveyDAO implements SurveyDAO{
 
 	private FavoriteParks mapRowToFavoriteParks(SqlRowSet results) {
 		FavoriteParks favoritePark = new FavoriteParks();
-		favoritePark.setParkCode(results.getString("lowerparkcode"));
-		favoritePark.setParkName(results.getNString("parkname"));
+		favoritePark.setParkCode(results.getString("parkcode"));
+		favoritePark.setParkName(results.getString("parkname"));
 		favoritePark.setVoteCount(results.getInt("parkcodecount"));
 		
 		return favoritePark;
 	}
 
 	
-	
-	private Long getNextId() {
-		String sqlSelectNextId = "select nextval ('seq_surveyid')";
-		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectNextId);
-		Long id = null;
-		if(results.next()) {
-			id = results.getLong(1);
-		} else {
-			throw new RuntimeException("Something strange happened, unable to select next survey post id from sequence");
-		}
-		return id;
-	}
+//	
+//	private Long getNextId() {
+//		String sqlSelectNextId = "select nextval ('seq_surveyid')";
+//		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectNextId);
+//		Long id = null;
+//		if(results.next()) {
+//			id = results.getLong(1);
+//		} else {
+//			throw new RuntimeException("Something strange happened, unable to select next survey post id from sequence");
+//		}
+//		return id;
+//	}
 
 	
 

@@ -19,7 +19,7 @@
 	<div class="favoriteParksListContainer">
 		<div id="favoriteParksItemContainer">
 			<div id="favoriteParkPicDIV">
-				<img id="favoriteParkPic" src="img/parks/cvnp.jpg">
+				<img id="favoriteParkPic" src="img/${favoritesForm.parkCode}.jpg">
 			</div>
 			<div id="favoriteParkName">Great Smoky Mountains National Park
 			</div>
