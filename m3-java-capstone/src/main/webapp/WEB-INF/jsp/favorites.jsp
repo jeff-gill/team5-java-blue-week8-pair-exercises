@@ -17,16 +17,16 @@
 		</div>
 	</div>
 	<div class="favoriteParksListContainer">
-		<div id="favoriteParksItemContainer">
-			<c:forEach items="${favorites}" var="favoritePark">
+		<c:forEach items="${favorites}" var="favoritePark">
+			<div id="favoriteParksItemContainer">
 				<div id="favoriteParkPicDIV">
-					<img id="favoriteParkPic" src="img/parks/${favoritePark.parkCode}.jpg">
+					<img id="favoriteParkPic"
+						src="img/parks/${favoritePark.parkCode}.jpg">
 				</div>
-				<div id="favoriteParkName">${favoritePark.parkName}
-				</div>
-				<div id="favoriteParkCount">${favoritePark.voteCount}</div>
-			</c:forEach>
-		</div>
+				<div id="favoriteParkName">${favoritePark.parkName}</div>
+				<div id="favoriteParkCount">${favoritePark.voteCount} votes!</div>
+			</div>
+		</c:forEach>
 	</div>
 </section>
 </body>

@@ -330,15 +330,16 @@ li {
 }
 
 .favoriteParksListContainer {
+	position: relative;
 	padding: 20px;
 	padding-top: 15px;
-	position: relative;
-	border-bottom: 2px solid black;
 }
 
 #favoriteParksItemContainer {
 	display: flex;
-	align-items: center;
+    align-items: center;
+    border-bottom: 2px solid black;
+    width: 95%;
 	
 }
 
@@ -353,12 +354,12 @@ li {
 
 #favoriteParkName {
 	flex-basis: 40%;
-	font-size: 3vh;
+	font-size: 2vw;
 }
 
 #favoriteParkCount {
 	flex-basis: 30%;
-	font-size:3vh;
+	font-size:2vw;
 	height: 100%;
 	
 }
