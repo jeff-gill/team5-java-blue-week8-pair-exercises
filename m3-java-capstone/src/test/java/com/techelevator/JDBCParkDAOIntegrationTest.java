@@ -51,8 +51,8 @@ public class JDBCParkDAOIntegrationTest {
 	
 	@Test
 	public void get_all_parks () {
-		String sqlInsertPark = "INSERT INTO park (parkcode, parkname, state, acreage, elevationinfeet, milesoftrail, numberofcampsites, climate, yearfounded, annualvisitorcount, inspirationalquote, inspirationalquotesource, parkdescription, entryfee, numberofanimalspecies, lowerparkcode) "
-				+ "VALUES ('AAA', 'Gordy's Park', 'Ohio', 4500, 250, 123.4, 58, 'Temperate', 1983, 700000, 'Be a good person', 'Gordy', 'Best Park in the world', 0, 8000, 'aaa')";
+		String sqlInsertPark = "INSERT INTO park (parkcode, parkname, state, acreage, elevationinfeet, milesoftrail, numberofcampsites, climate, yearfounded, annualvisitorcount, inspirationalquote, inspirationalquotesource, parkdescription, entryfee, numberofanimalspecies) "
+				+ "VALUES ('AAA', 'Gordy's Park', 'Ohio', 4500, 250, 123.4, 58, 'Temperate', 1983, 700000, 'Be a good person', 'Gordy', 'Best Park in the world', 0, 8000)";
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 		jdbcTemplate.update(sqlInsertPark);
 		List<Park> results =dao.getAllParks();
