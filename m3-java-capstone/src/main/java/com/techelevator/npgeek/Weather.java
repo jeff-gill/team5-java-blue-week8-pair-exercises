@@ -6,6 +6,8 @@ public class Weather {
 	private int lowTemperature;
 	private int highTemperature;
 	private String forecast;
+	private int celciusHigh;
+	private int celciusLow;
 	
 	
 	public String getParkCode() {
@@ -31,6 +33,18 @@ public class Weather {
 	}
 	public void setHighTemperature(int highTemperature) {
 		this.highTemperature = highTemperature;
+	}
+	public int getCelciusHigh() {
+		return celciusHigh;
+	}
+	public void setCeliusHigh(int highTemperature) {
+		this.celciusHigh = (int) ((highTemperature) - 32 / 1.8);
+	}
+	public int getCelciusLow() {
+		return celciusLow;
+	}
+	public void setCeliusLow(int lowTemperature) {
+		this.celciusLow = (int) ((lowTemperature - 32)  / 1.8);
 	}
 	public String getForecast() {
 		return forecast;
