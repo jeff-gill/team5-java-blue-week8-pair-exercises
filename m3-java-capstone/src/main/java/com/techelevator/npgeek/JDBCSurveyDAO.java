@@ -35,9 +35,9 @@ public class JDBCSurveyDAO implements SurveyDAO{
 		List<FavoriteParks> favoritePark = new ArrayList<FavoriteParks>();
 		String sqlSelectSurveyResults = "select count(park.parkcode) as parkcodecount, survey_result.parkcode, park.parkname from survey_result " + 
 				"join park on survey_result.parkcode = lower(park.parkcode) " + 
-				"group by survey_result.parkcode, park.parkname "; //+ 
-				//"having count(park.parkcode) > 1 " + 
-				//"order by count(park.parkcode) DESC limit 5";
+				"group by survey_result.parkcode, park.parkname " + 
+				"having count(park.parkcode) > 1 " + 
+				"order by count(park.parkcode) DESC limit 5";
 		
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectSurveyResults);
 		

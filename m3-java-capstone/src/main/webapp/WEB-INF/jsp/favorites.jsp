@@ -20,11 +20,11 @@
 		<div id="favoriteParksItemContainer">
 			<c:forEach items="${favorites}" var="favoritePark">
 				<div id="favoriteParkPicDIV">
-					<img id="favoriteParkPic" src="img/${park.parkCode}.jpg">
+					<img id="favoriteParkPic" src="img/parks/${favoritePark.parkCode}.jpg">
 				</div>
-				<div id="favoriteParkName">Great Smoky Mountains National Park
+				<div id="favoriteParkName">${favoritePark.parkName}
 				</div>
-				<div id="favoriteParkCount">4 votes</div>
+				<div id="favoriteParkCount">${favoritePark.voteCount}</div>
 			</c:forEach>
 		</div>
 	</div>
