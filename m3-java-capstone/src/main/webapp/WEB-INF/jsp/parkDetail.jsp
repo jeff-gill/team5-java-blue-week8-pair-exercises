@@ -70,20 +70,21 @@
 			<c:forEach var="todayWeather" items="${weather}">
 
 				<c:choose>
-					<c:when test="${todayWeather.dayForForcast > 0}">
+					<c:when test="${todayWeather.dayForForcast == 1}">
 						<div class="weatherByDay">
-							<div >
-								<img id="weatherPicDayOne" src="img/weather/${todayWeather.forecast}.png">
+							<div>
+								<img id="weatherPicDayOne"
+									src="img/weather/${todayWeather.forecast}.png">
 							</div>
 							<div class="todayWeatherTempContainer">
-								<div class="todayWeatherTempHighContainer" >
+								<div class="todayWeatherTempHighContainer">
 									<div id="todayWeatherHighLowTitle">
 										<b> <i>High:</i></b>
 									</div>
 									<div id="todayWeatherHighTemp">${todayWeather.highTemperature}</div>
 								</div>
 								<div>
-								
+
 									<div id="todayWeatherHighTitle">
 										<b> <i>Low:</i></b>
 									</div>
@@ -93,7 +94,7 @@
 							<div id="todayWeatherAdvisoryContainer">
 								<div id="advisoryOne">
 									<c:choose>
-										<c:when test="${todayWeather.forecast == 'thunderstrorms'}">
+										<c:when test="${todayWeather.forecast == 'thunderstorms'}">
 											<div>
 												<b><i>Weather Advisory: </i></b>Please seek shelter and
 												avoid hiking on exposed ridges.
@@ -120,30 +121,59 @@
 										</c:otherwise>
 									</c:choose>
 								</div>
-							
-							<div id="advisoryTwo">
-								<c:choose>
-									<c:when test="${todayWeather.highTemperature >= 75}">
-										<div><b><i>Weather Advisory: </i></b>Park Service recommends to bring an extra gallon of
-											water.</div>
-									</c:when>
-									<c:when
-										test="${todayWeather.highTemperature - todayWeather.lowTemperature  >= 20}">
-										<div><b><i>Weather Advisory: </i></b>Be sure to wear breathable layers.</div>
-									</c:when>
-									<c:when test="${todayWeather.lowTemperature <= 20}">
-										<div><b><i>Weather Advisory: </i></b>Be sure to warn the user of the dangers of exposure
-											to frigid temperatures.</div>
-									</c:when>
-									<c:otherwise>
-										<div></div>
-									</c:otherwise>
-								</c:choose>
+
+								<div id="advisoryTwo">
+									<c:choose>
+										<c:when test="${todayWeather.highTemperature >= 75}">
+											<div>
+												<b><i>Weather Advisory: </i></b>Park Service recommends to
+												bring an extra gallon of water.
+											</div>
+										</c:when>
+										<c:when
+											test="${todayWeather.highTemperature - todayWeather.lowTemperature  >= 20}">
+											<div>
+												<b><i>Weather Advisory: </i></b>Be sure to wear breathable
+												layers.
+											</div>
+										</c:when>
+										<c:when test="${todayWeather.lowTemperature <= 20}">
+											<div>
+												<b><i>Weather Advisory: </i></b>Be sure to warn the user of
+												the dangers of exposure to frigid temperatures.
+											</div>
+										</c:when>
+										<c:otherwise>
+											<div></div>
+										</c:otherwise>
+									</c:choose>
+								</div>
 							</div>
 						</div>
-						</div>
 					</c:when>
+					<c:otherwise>
+						<div class="weatherByDay">
+							<div>
+								<img id="weatherPicDayOne"
+									src="img/weather/${todayWeather.forecast}.png">
+							</div>
+							<div class="todayWeatherTempContainer">
+								<div class="todayWeatherTempHighContainer">
+									<div id="todayWeatherHighLowTitle">
+										<b> <i>High:</i></b>
+									</div>
+									<div id="todayWeatherHighTemp">${todayWeather.highTemperature}</div>
+								</div>
+								<div>
 
+									<div id="todayWeatherHighTitle">
+										<b> <i>Low:</i></b>
+									</div>
+									<div id="todayWeatherLowTemp">${todayWeather.lowTemperature}</div>
+								</div>
+							</div>
+						</div>
+					</c:otherwise>
 				</c:choose>
 
 
