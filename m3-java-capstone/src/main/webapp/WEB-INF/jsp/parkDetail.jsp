@@ -61,14 +61,25 @@
 		</div>
 
 	</div>
-	<div class="todaysWeatherTitle">
-		<b><i>5-Day Weather Forecast: </i></b>
+	<div class="todaysWeatherTitleContainer">
+		<div class="todaysWeatherTitle">
+			<b><i>5-Day Weather Forecast: </i></b>
+		</div>
+		<div id="tempUnitChanger">
+			<form action="${detailPageURL}" method="GET">
+				<a><b><i>Fahrenheit </i></b></a> <label class="switch"> <input
+					type="checkbox" value="Fahrenheit"> <span
+					class="slider round"></span>
+				</label> <label class="switch"> <input type="checkbox" checked
+					value="Celsius">
+				</label><a><b><i>Celsius</i></b></a>
+			</form>
+		</div>
 	</div>
 	<div class="fiveDayWeatherContainer">
 
 		<div class="todayWeatherContainer">
 			<c:forEach var="todayWeather" items="${weather}">
-
 				<c:choose>
 					<c:when test="${todayWeather.dayForForcast == 1}">
 						<div class="weatherByDay">
@@ -189,3 +200,28 @@
 
 </body>
 </html>
+
+<%-- <c:when test="${switch == 'C'}">
+	<div id="todayWeatherHighLowTitle">
+		<b> <i>High:</i></b>
+	</div>
+	<div id="todayWeatherHighTemp">${todayWeather.celciusHigh}</div>
+</c:when>
+<c:otherwise>
+	<div id="todayWeatherHighTemp">${todayWeather.highTemperature}</div>
+</c:otherwise>
+</div>
+</c:choose>
+<c:choose>
+	<c:when test="${switch == 'C'}">
+
+		<div id="todayWeatherHighTitle">
+			<b> <i>Low:</i></b>
+		</div>
+		<div id="todayWeatherLowTemp">${todayWeather.celciusLow}</div>
+	</c:when>
+</c:choose>
+<c:otherwise>
+	<div id="todayWeatherHighTemp">${todayWeather.lowTemperature}</div>
+</c:otherwise>
+ --%>

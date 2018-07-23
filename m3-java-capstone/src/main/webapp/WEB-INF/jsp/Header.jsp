@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="css/parkSite.css" />
 </head>
 <body>
-<div class="headerBar">
+	<div class="headerBar">
 		<div class="headerContainer">
 			<img class="logoPic" src=" img/logo.png" />
 		</div>
@@ -16,7 +16,8 @@
 				<ul class="navBarItems">
 					<li><a href="/m3-java-capstone/homePage">Home</a></li>
 					<li><a href="/m3-java-capstone/survey">Survey</a></li>
+					
 				</ul>
 			</nav>
 		</div>
-</div>
+	</div>
